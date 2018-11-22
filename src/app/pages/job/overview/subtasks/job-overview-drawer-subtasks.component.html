@@ -24,7 +24,7 @@
   <tbody>
     <tr *ngFor="let task of listOfTask; trackBy:trackTaskBy;">
       <td nzLeft="0">
-        {{ task.subtask }}
+        <a [routerLink]="['../../../','task-manager',task['resource-id'],'log']" target="_blank">LOG {{ task.subtask }}</a>
       </td>
       <td>
         <span *ngIf="task.metrics['read-bytes-complete'];else loadingTemplate">

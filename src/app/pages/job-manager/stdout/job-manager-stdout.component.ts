@@ -11,7 +11,12 @@ import { MonacoEditorComponent } from 'share/common/monaco-editor/monaco-editor.
 export class JobManagerStdoutComponent implements OnInit {
   @ViewChild(MonacoEditorComponent) monacoEditorComponent: MonacoEditorComponent;
   stdout = '';
-
+  pageChanged(page) {
+    this.jobManagerService.loadStdout(page).subscribe(data => {
+      this.stdout = data;
+      this.cdr.markForCheck();
+    });
+  }
   constructor(private jobManagerService: JobManagerService, private cdr: ChangeDetectorRef) {
   }
 

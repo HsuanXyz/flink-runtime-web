@@ -10,8 +10,7 @@ export class TaskManagerStatusComponent implements OnInit {
   @Input() isLoading = true;
   listOfNavigation = [
     { path: 'metrics', title: 'Metrics' },
-    { path: 'logs', title: 'Logs' },
-    { path: 'stdout', title: 'Stdout' }
+    { path: 'log', title: 'Log' }
   ];
 
   get detail() {

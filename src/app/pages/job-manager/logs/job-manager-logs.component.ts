@@ -12,6 +12,13 @@ export class JobManagerLogsComponent implements OnInit {
   @ViewChild(MonacoEditorComponent) monacoEditorComponent: MonacoEditorComponent;
   logs = '';
 
+  pageChanged(page) {
+    this.jobManagerService.loadLogs(page).subscribe(data => {
+      this.logs = data;
+      this.cdr.markForCheck();
+    });
+  }
+
   constructor(private jobManagerService: JobManagerService, private cdr: ChangeDetectorRef) {
   }
 

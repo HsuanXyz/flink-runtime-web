@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { NgZorroAntdModule } from 'ng-zorro-antd';
 import { PipeModule } from 'pipes/pipe.module';
+import { PaginationComponent } from './common/pagination/pagination.component';
 import { DagreModule } from './common/dagre/dagre.module';
 import { LayoutComponent } from './common/layout/layout.component';
 import { TaskBadgeComponent } from './customize/task-badge/task-badge.component';
@@ -33,7 +34,8 @@ import { JobChartComponent } from './customize/job-chart/job-chart.component';
     NavigationComponent,
     FileReadDirective,
     ResizeComponent,
-    JobChartComponent
+    JobChartComponent,
+    PaginationComponent
   ],
   exports     : [
     LayoutComponent,
@@ -45,7 +47,8 @@ import { JobChartComponent } from './customize/job-chart/job-chart.component';
     NavigationComponent,
     FileReadDirective,
     ResizeComponent,
-    JobChartComponent
+    JobChartComponent,
+    PaginationComponent
   ]
 })
 export class ShareModule {

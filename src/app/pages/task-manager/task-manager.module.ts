@@ -9,8 +9,8 @@ import { TaskManagerListComponent } from './list/task-manager-list.component';
 import { TaskManagerMetricsComponent } from './metrics/task-manager-metrics.component';
 import { TaskManagerComponent } from './task-manager.component';
 import { TaskManagerStatusComponent } from './status/task-manager-status.component';
-import { TaskManagerLogsComponent } from './logs/task-manager-logs.component';
-import { TaskManagerStdoutComponent } from './stdout/task-manager-stdout.component';
+import { TaskManagerLogListComponent } from './log-list/task-manager-log-list.component';
+import { TaskManagerLogDetailComponent } from './log-detail/task-manager-log-detail.component';
 
 @NgModule({
   imports     : [
@@ -25,8 +25,8 @@ import { TaskManagerStdoutComponent } from './stdout/task-manager-stdout.compone
     TaskManagerMetricsComponent,
     TaskManagerComponent,
     TaskManagerStatusComponent,
-    TaskManagerLogsComponent,
-    TaskManagerStdoutComponent
+    TaskManagerLogListComponent,
+    TaskManagerLogDetailComponent
   ]
 })
 export class TaskManagerModule {

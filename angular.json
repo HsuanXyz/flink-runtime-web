@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/flink-runtime-web",
+            "outputPath": "web",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -29,6 +29,11 @@
                 "glob": "**/*",
                 "input": "./node_modules/monaco-editor/min/vs",
                 "output": "libs/vs"
+              },
+              {
+                "glob": "**/*",
+                "input": "./previous-dashboard/web/",
+                "output": "/previous/"
               }
             ],
             "styles": [

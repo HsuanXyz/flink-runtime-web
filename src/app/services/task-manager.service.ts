@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
 import { map } from 'rxjs/operators';
@@ -20,8 +20,19 @@ export class TaskManagerService {
     return this.httpClient.get<TaskManagerDetailInterface>(`${BASE_URL}/taskmanagers/${taskManagerId}`);
   }
 
+  /** @deprecated use loadLogList & loadLog instead **/
   loadLogs(taskManagerId) {
     return this.httpClient.get(`${BASE_URL}/taskmanagers/${taskManagerId}/log`, { responseType: 'text' });
+  }
+
+  loadLogList(taskManagerId) {
+    return this.httpClient.get<{ logs: Array<{ name: string, size: number }> }>(`${BASE_URL}/taskmanagers/${taskManagerId}/logs`);
+  }
+
+  loadLog(taskManagerId, logName, page = -1, count = 102400) {
+    const start = page * count;
+    const params = new HttpParams().append('start', `${start}`).append('count', `${count}`);
+    return this.httpClient.get(`${BASE_URL}/taskmanagers/${taskManagerId}/log/${logName}`, { params: params, responseType: 'text' });
   }
 
   loadStdout(taskManagerId) {

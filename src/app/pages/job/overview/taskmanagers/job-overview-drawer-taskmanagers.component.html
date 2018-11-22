@@ -22,7 +22,7 @@
   </thead>
   <tbody>
     <tr *ngFor="let taskManager of listOfTaskManager; trackBy:trackTaskManagerBy;">
-      <td nzLeft="0px">{{ taskManager.host }}</td>
+      <td nzLeft="0px"><a [routerLink]="['../../../','task-manager',taskManager['resource-id'],'metric']" target="_blank">{{ taskManager.host }}</a></td>
       <td>
         <span *ngIf="taskManager.metrics['read-bytes-complete'];else loadingTemplate">
           {{ taskManager.metrics['read-bytes'] | humanizeBytes }}
